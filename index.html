@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love Ayesha ❤</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;700&display=swap');
+
+        /* Background divided into two colors */
+        body {
+            background: linear-gradient(to right, #ff0033 50%, #ff6699 50%);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Message Box Styling */
+        .container {
+            background: linear-gradient(135deg, #ff1e42, #ff6699);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            background: #ff1e42;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff0033;
+            transform: scale(1.1);
+        }
+
+        #response {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+            font-family: 'Dancing Script', cursive;
+            color: yellow;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fireworks Styling */
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: yellow;
+            border-radius: 50%;
+            opacity: 0;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Love, Ayesha ❤</h1>
+        <p>Ayesha, you are the most special person in my life. You make every moment magical. Will you be mine forever? 💍</p>
+        <button onclick="showLove()">Click for a Surprise! 💕</button>
+        <h2 id="response"></h2>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("response").style.display = "block";
+            document.getElementById("response").innerHTML = "Kya Tum Meri Antul Hayat Banogi? ❤";
+
+            // Fireworks Effect for 10 seconds
+            let interval = setInterval(() => {
+                let firework = document.createElement("div");
+                firework.classList.add("firework");
+                firework.style.left = Math.random() * 100 + "vw";
+                firework.style.top = Math.random() * 100 + "vh";
+                firework.style.background = ["yellow", "red", "pink", "blue"][Math.floor(Math.random() * 4)];
+                document.body.appendChild(firework);
+                
+                setTimeout(() => {
+                    firework.remove();
+                }, 1000);
+            }, 200);
+
+            // Stop fireworks after 10 seconds
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
